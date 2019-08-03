@@ -1,4 +1,3 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,25 +6,31 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Integradora</title>
+	{% load static %}
 	<link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="{% static 'inicio/css/style.css' %}">
-
 </head>
 
 <body>
-	<div class="page-header">
-		<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-		<h1><a href="/">Pruebas pa integradora :v</a></h1>
-	</div>
-	<div class="content container">
-		<div class="row">
-			<div class="col-md-12">
-				{% block content %}
-				{% endblock %}
-			</div>
+	<div class="">
+		<div class="page-header">
+			<a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+			<h1><a href="/">Pruebas pa integradora :v</a></h1>
 		</div>
+		<!-- CONTENIDO -->
+		<div class="main">
+			{% block content %}
+			{% endblock %}
+		</div>
+		<!-- /CONTENIDO -->
+		<footer class="footer">
+			<div class="page-footer">
+				<h2 class="footer-h2">Integradora</h2> 
+				<small class="footer-h2">Equipo SmartChips <br> Todos los derechos reservados prro :v</small>
+			</div>
+		</footer>
 	</div>
 </body>
 

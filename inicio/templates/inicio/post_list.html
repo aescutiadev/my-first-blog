@@ -1,14 +1,30 @@
 {% extends 'inicio/principal.html' %}
 {% block content %}
-	{% for post in posts %}
-	<div class="post">
-		<div class="date">
-			{{ post.published_date }}
-		</div>
-		<a class="btn btn-default" href=""><span class="glyphicon glyphicon-remove"></span></a>
-		<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-		<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
-		<p>{{ post.text|linebreaksbr }}</p>
+<div class="menu-user">
+	<div class="navegation">
+		<ul>
+			<li><a href="{% url 'contacto' %}">Contacto</a></li>
+			<li><a href="">Contenido</a></li>
+		</ul>
 	</div>
-	{% endfor %}
+</div>
+<div class="content container">
+	<div class="row">
+		<div class="col-md-12">
+			{% for post in posts %}
+			<div class="post">
+				<div class="date">
+					{{ post.published_date }}
+				</div>
+				<a class="btn btn-default" href=""><span class="glyphicon glyphicon-remove"></span></a>
+				<a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span
+						class="glyphicon glyphicon-pencil"></span></a>
+				<h1><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
+				<p>Estado: {{ post.city }}</p>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
 {% endblock content %}

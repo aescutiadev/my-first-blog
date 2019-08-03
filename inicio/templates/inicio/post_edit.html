@@ -1,9 +1,17 @@
 {% extends 'inicio/principal.html' %}
 
 {% block content %}
-    <h1>New post</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
-    </form>
+<div class="content container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Evento</h1>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form.as_p }}
+                <!-- Toma los elementos de la base de datos para editarlos -->
+                <button type="submit" class="save btn btn-default">Save</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
